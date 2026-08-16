@@ -1,10 +1,10 @@
 name: Generate Pac-Man contribution graph
- 
+
 on:
   schedule:
-    - cron: "0 0,12 * * *"   # regenerates twice a day
-  workflow_dispatch:          # lets you trigger it manually too
- 
+    - cron: "0 0,12 * * *"
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
