@@ -1,1 +1,17 @@
-
+name: Generate Pac-Man contribution graph
+ 
+on:
+  schedule:
+    - cron: "0 0,12 * * *"   # regenerates twice a day
+  workflow_dispatch:          # lets you trigger it manually too
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Pac-Man SVG
+        uses: pencilrebel/pacman-contribution-graph@main
+        with:
+          github_user_name: stutijha
