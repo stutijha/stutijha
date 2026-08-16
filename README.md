@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=32&pause=1000&color=FF69B4&center=true&vCenter=true&width=700&height=70&lines=Hi+There!;I'm+Stuti+Jha;ECE+Student+%7C+Aspiring+AI+Developer;Welcome+to+my+GitHub" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=32&pause=1000&color=89CFF0&center=true&vCenter=true&width=700&height=70&lines=Hi+There!;I'm+Stuti+Jha;ECE+Student+%7C+Aspiring+AI+Developer;Welcome+to+my+GitHub" />
 </h1>
 
 <br>
@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="mailto:jhastuti16@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-FF69B4?style=for-the-badge&logo=gmail&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Gmail-89CFF0?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
 
@@ -37,21 +37,21 @@
 
 <h3>Tools & Platforms</h3>
 <img src="https://skillicons.dev/icons?i=vscode,github" />
-<img src="https://img.shields.io/badge/Canva-FF69B4?style=for-the-badge&logo=canva&logoColor=white"/>
+<img src="https://img.shields.io/badge/Canva-89CFF0?style=for-the-badge&logo=canva&logoColor=white"/>
 
 <br><br>
 
 <h3>Data & AI</h3>
-<img src="https://img.shields.io/badge/scikit--learn-FF69B4?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
-<img src="https://img.shields.io/badge/Pandas-FF8FC7?style=for-the-badge&logo=pandas&logoColor=white"/>
-<img src="https://img.shields.io/badge/NumPy-FFAFDA?style=for-the-badge&logo=numpy&logoColor=333"/>
-<img src="https://img.shields.io/badge/Matplotlib-FFC1E3?style=for-the-badge&logoColor=333"/>
+<img src="https://img.shields.io/badge/scikit--learn-89CFF0?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+<img src="https://img.shields.io/badge/Pandas-A6D8F0?style=for-the-badge&logo=pandas&logoColor=white"/>
+<img src="https://img.shields.io/badge/NumPy-BCE1F2?style=for-the-badge&logo=numpy&logoColor=333"/>
+<img src="https://img.shields.io/badge/Matplotlib-D2EBF5?style=for-the-badge&logoColor=333"/>
 
 <br><br>
 
 <h3>Currently Learning</h3>
-<img src="https://img.shields.io/badge/Blender-FFAFDA?style=for-the-badge&logo=blender&logoColor=333"/>
-<img src="https://img.shields.io/badge/3D%20Animation-FFC1E3?style=for-the-badge&logoColor=333"/>
+<img src="https://img.shields.io/badge/Blender-BCE1F2?style=for-the-badge&logo=blender&logoColor=333"/>
+<img src="https://img.shields.io/badge/3D%20Animation-D2EBF5?style=for-the-badge&logoColor=333"/>
 
 </div>
 
@@ -62,7 +62,7 @@
 <h2 align="center">Contribution Activity</h2>
 <br>
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark&hide_border=true&bg_color=0d1117&color=FF69B4&line=FF69B4&point=FFC1E3" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark&hide_border=true&bg_color=0d1117&color=89CFF0&line=89CFF0&point=D2EBF5" />
 </p>
 
 <br/>
@@ -72,7 +72,7 @@
 <h2 align="center">GitHub Streak</h2>
 <br>
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FF69B4&fire=FF69B4&currStreakLabel=FF69B4" />
+  <img src="https://streak-stats.demolab.com?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=89CFF0&fire=89CFF0&currStreakLabel=89CFF0" />
 </p>
 
 <br/>
