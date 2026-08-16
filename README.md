@@ -84,7 +84,7 @@
 <div align="center">
   <h2>Pac-Man Contribution Graph</h2>
   <br>
-  <img alt="pacman eating my contributions" src="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman-contribution-graph.svg" />
+  <img alt="pacman eating my contributions" src="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman-contribution-graph-dark.svg" />
   <br/><br/>
 </div>
 
