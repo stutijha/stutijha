@@ -100,7 +100,7 @@
   <br>
   <img src="https://img.shields.io/badge/-%F0%9F%91%BB%20chomp%20chomp%20%F0%9F%91%BB-FF69B4?style=for-the-badge" />
   <br><br>
-  <img alt="pacman eating my contributions" src="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman.svg" />
+  <img alt="pacman eating my contributions" src="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman-contribution-graph.svg" />
   <br/><br/><br/>
 </div>
 
