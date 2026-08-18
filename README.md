@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=32&pause=1000&color=C8A2E8&center=true&vCenter=true&width=700&height=70&lines=Hi+There!;I'm+Stuti+Jha;ECE+Student+%7C+Aspiring+AI+Developer;Welcome+to+my+GitHub" />
+  <img src="https://readme-typing-svg.demolab.com/?font=Poppins&weight=600&size=32&pause=1000&color=C8A2E8&center=true&vCenter=true&width=700&height=70&lines=Hi+There!;I'm+Stuti+Jha;ECE+Student+%7C+Aspiring+AI+Developer;Welcome+to+my+GitHub" />
 </h1>
 
 <h3 align="center">🌿</h3>
@@ -77,7 +77,7 @@
   <img src="https://streak-stats.demolab.com?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0" />
 </p>
 
-<br/>
+<br>
 
 ---
 
