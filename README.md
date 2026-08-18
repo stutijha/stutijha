@@ -74,7 +74,7 @@
 <h2 align="center">GitHub Streak</h2>
 <br>
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0" />
+  <img src="https://streak-stats.demolab.com/?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0" />
 </p>
 
 <br>
@@ -84,7 +84,10 @@
 <div align="center">
   <h2>Pac-Man Contribution Graph</h2>
   <br>
-  <img alt="pacman eating my contributions" src="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman-contribution-graph-dark.svg" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman-contribution-graph-dark.svg">
+    <img alt="Pac-Man eating my contributions" src="https://raw.githubusercontent.com/stutijha/stutijha/output/pacman-contribution-graph.svg">
+  </picture>
   <br/><br/>
 </div>
 
