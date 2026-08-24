@@ -67,7 +67,7 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark&hide_border=true&bg_color=0d1117&color=89CFF0&line=89CFF0&point=C8A2E8&area_color=C8A2E8" />
 </p>
 
-<br/>
+<br>
 
 ---
 
@@ -91,8 +91,11 @@
   <br/><br/>
 </div>
 
-<br/>
+<br>
 
 ---
 
-<h3 align="center">Thanks for visiting my profile! 🍋</h3>
+<div align="center">
+  <h3>✦ thanks for stopping by ✦</h3>
+  <img src="https://komarev.com/ghpvc/?username=stutijha&style=flat-square&color=FF69B4&label=profile+views" alt="profile views" />
+</div>
