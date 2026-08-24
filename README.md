@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="mailto:jhastuti16@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-FF69B4?style=flat&logo=gmail&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Gmail-FF69B4?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
 
