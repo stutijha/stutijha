@@ -55,45 +55,55 @@ days = [
 ]
 days = [d for d in days if start.isoformat() <= d["date"] <= end.isoformat()]
 
-width, height = 900, 260
-left, right, top, bottom = 42, 18, 16, 38
+# Weekly totals make the chart readable even when one day has a much larger spike.
+weeks = []
+for i in range(0, len(days), 7):
+    chunk = days[i:i + 7]
+    if chunk:
+        weeks.append({
+            "date": chunk[0]["date"],
+            "count": sum(d["contributionCount"] for d in chunk),
+        })
+
+width, height = 900, 230
+left, right, top, bottom = 18, 18, 18, 34
 chart_w = width - left - right
 chart_h = height - top - bottom
-max_count = max([d["contributionCount"] for d in days] or [1])
-step = chart_w / max(1, len(days) - 1)
+max_count = max([w["count"] for w in weeks] or [1])
+step = chart_w / max(1, len(weeks) - 1)
+
+# Gentle square-root scaling keeps small activity visible without hiding larger activity.
 points = []
-for i, d in enumerate(days):
+for i, w in enumerate(weeks):
     x = left + i * step
-    y = top + chart_h - (d["contributionCount"] / max_count) * chart_h
+    normalized = (w["count"] / max_count) ** 0.5
+    y = top + chart_h - normalized * chart_h
     points.append((x, y))
 
 line = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
 area = f"{left:.1f},{top+chart_h:.1f} " + line + f" {left+chart_w:.1f},{top+chart_h:.1f}"
 
 labels = []
-for i, d in enumerate(days):
-    if d["date"][8:10] == "01":
-        labels.append((left + i * step, d["date"][:7]))
+for i, w in enumerate(weeks):
+    if w["date"][8:10] <= "07":
+        labels.append((left + i * step, w["date"][:7]))
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
 '''
 
-# subtle horizontal grid and y-axis labels
+# Subtle grid, without adding a title inside the image.
 for tick in range(5):
-    value = max_count * tick / 4
-    y = top + chart_h - (value / max_count) * chart_h
-    label = str(round(value))
+    y = top + chart_h - (tick / 4) * chart_h
     svg += f'<line x1="{left}" y1="{y:.1f}" x2="{left+chart_w}" y2="{y:.1f}" stroke="#21262d" stroke-width="1"/>'
-    svg += f'<text x="4" y="{y+4:.1f}" fill="#6e7681" font-family="Arial, sans-serif" font-size="10">{label}</text>'
 
 svg += f'''
-<polygon points="{area}" fill="#C8A2E8" opacity="0.10"/>
+<polygon points="{area}" fill="#C8A2E8" opacity="0.12"/>
 <polyline points="{line}" fill="none" stroke="#89CFF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 '''
 
 for x, y in points:
-    svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="1.7" fill="#C8A2E8"/>'
+    svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2" fill="#C8A2E8"/>'
 
 for x, label in labels:
     svg += f'<text x="{x:.1f}" y="{height-10}" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">{label}</text>'
