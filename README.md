@@ -64,7 +64,7 @@
 <h2 align="center">contribution activity</h2>
 <br>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/stutijha/stutijha/main/assets/activity-graph.svg?v=20260825" alt="contribution activity graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark&hide_border=true&bg_color=0d1117&color=89CFF0&line=89CFF0&point=C8A2E8&area_color=C8A2E8&v=20260825" />
 </p>
 
 <br>
