@@ -21,7 +21,7 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 """
 
 end = date.today()
-start = end - timedelta(days=34)
+start = end - timedelta(days=364)
 payload = json.dumps({
     "query": query,
     "variables": {
@@ -48,11 +48,15 @@ with urllib.request.urlopen(request) as response:
 if result.get("errors"):
     raise RuntimeError(result["errors"])
 
-days = [d for w in result["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"] for d in w["contributionDays"]]
+days = [
+    d
+    for w in result["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+    for d in w["contributionDays"]
+]
 days = [d for d in days if start.isoformat() <= d["date"] <= end.isoformat()]
 
-width, height = 900, 250
-left, right, top, bottom = 48, 18, 36, 42
+width, height = 900, 220
+left, right, top, bottom = 18, 18, 18, 30
 chart_w = width - left - right
 chart_h = height - top - bottom
 max_count = max([d["contributionCount"] for d in days] or [1])
@@ -68,20 +72,19 @@ area = f"{left:.1f},{top+chart_h:.1f} " + line + f" {left+chart_w:.1f},{top+char
 
 labels = []
 for i, d in enumerate(days):
-    if d["date"][8:10] == "01" or i == 0:
+    if d["date"][8:10] == "01":
         labels.append((left + i * step, d["date"][:7]))
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
-<text x="{left}" y="22" fill="#e6edf3" font-family="Arial, sans-serif" font-size="15" font-weight="600">contribution activity</text>
 <line x1="{left}" y1="{top+chart_h}" x2="{left+chart_w}" y2="{top+chart_h}" stroke="#30363d"/>
-<polygon points="{area}" fill="#C8A2E8" opacity="0.14"/>
-<polyline points="{line}" fill="none" stroke="#89CFF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="{area}" fill="#C8A2E8" opacity="0.12"/>
+<polyline points="{line}" fill="none" stroke="#89CFF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 '''
 for x, y in points:
-    svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.6" fill="#C8A2E8"/>'
+    svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="1.7" fill="#C8A2E8"/>'
 for x, label in labels:
-    svg += f'<text x="{x:.1f}" y="{height-16}" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">{label}</text>'
+    svg += f'<text x="{x:.1f}" y="{height-9}" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">{label}</text>'
 svg += '</svg>\n'
 
 os.makedirs("assets", exist_ok=True)
