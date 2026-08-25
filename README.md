@@ -64,7 +64,7 @@
 <h2 align="center">contribution activity</h2>
 <br>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/stutijha/stutijha/main/assets/activity-graph.svg" alt="contribution activity graph" />
+  <img src="https://raw.githubusercontent.com/stutijha/stutijha/main/assets/activity-graph.svg?v=20260825" alt="contribution activity graph" />
 </p>
 
 <br>
