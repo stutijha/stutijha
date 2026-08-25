@@ -74,7 +74,7 @@
 <h2 align="center">github streak</h2>
 <br>
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0" />
+  <img src="https://streak-stats.demolab.com/?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0&currStreakNum=FFF3A0" />
 </p>
 
 <br>
