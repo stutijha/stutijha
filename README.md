@@ -64,7 +64,7 @@
 <h2 align="center">contribution activity</h2>
 <br>
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark&hide_border=true&bg_color=0d1117&color=89CFF0&line=89CFF0&point=C8A2E8&area_color=C8A2E8" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark" />
 </p>
 
 <br>
@@ -74,7 +74,7 @@
 <h2 align="center">github streak</h2>
 <br>
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0&currStreakNum=FFF3A0" />
+  <img src="https://streak-stats.vercel.app/?user=stutijha&theme=gruvbox&hide_border=true&border_radius=10&background=0D1117&ring=FFF3A0&fire=FFF3A0&currStreakLabel=FFF3A0&currStreakNum=FFF3A0" />
 </p>
 
 <br>
