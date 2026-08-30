@@ -2,7 +2,7 @@
   <img src="https://readme-typing-svg.demolab.com/?font=Poppins&weight=600&size=32&pause=1000&color=C8A2E8&center=true&vCenter=true&width=700&height=70&lines=hi+there!;i'm+stuti+jha;welcome+to+my+github" />
 </h1>
 
-<h3 align="center">✦ ✦ ✦</h3>
+<h3 align="center">✦</h3>
 
 <br>
 
