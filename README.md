@@ -9,8 +9,8 @@
 <div align="center">
 
 🔭 currently working on **python** and building ai mini-projects  
-🌱 also learning **ece fundamentals** — circuits, signals, and digital logic  
-💬 ask me about **python, ai/ml mini-projects, or ece basics**
+🌱 also learning the **ece fundamentals** — circuits, signals, and digital logic  
+💬 ask me about **python, ai/ml mini-projects, ece basics, or cats**
 
 <br><br>
 
