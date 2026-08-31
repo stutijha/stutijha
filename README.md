@@ -64,7 +64,7 @@
 <h2 align="center">contribution activity</h2>
 <br>
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&theme=react-dark&hide_border=true&bg_color=0d1117&color=89CFF0&line=89CFF0&point=C8A2E8&area_color=C8A2E8&v=20260825" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=stutijha&bg_color=0d1117&color=2F81F7&title_color=2F81F7&line=2F81F7&point=FF7A00&area_color=2F81F7&area=true&hide_border=true&custom_title=Stuti%27s%20Contribution%20Graph&height=420&days=31&grid=true" width="100%" alt="Stuti's contribution activity graph" />
 </p>
 
 <br>
