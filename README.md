@@ -97,5 +97,4 @@
 
 <div align="center">
   <h3>✦ thanks for stopping by ✦</h3>
-  <img src="https://komarev.com/ghpvc/?username=stutijha&style=flat-square&color=FF69B4&label=profile+views" alt="profile views" />
 </div>
