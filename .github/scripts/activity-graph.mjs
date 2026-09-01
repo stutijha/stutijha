@@ -6,15 +6,21 @@ const username = process.env.GITHUB_USERNAME || "stutijha";
 if (!token) throw new Error("GITHUB_TOKEN is required");
 
 const to = new Date();
-// Show only the current contribution period requested by Stuti.
 const from = new Date("2026-08-01T00:00:00Z");
 const iso = (d) => d.toISOString();
 
 const query = `
   query($login: String!, $from: DateTime!, $to: DateTime!) {
     user(login: $login) {
-      contributionCalendar(from: $from, to: $to) {
-        weeks { contributionDays { date contributionCount } }
+      contributionsCollection(from: $from, to: $to) {
+        contributionCalendar {
+          weeks {
+            contributionDays {
+              date
+              contributionCount
+            }
+          }
+        }
       }
     }
   }
@@ -34,7 +40,7 @@ if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
 const body = await response.json();
 if (body.errors) throw new Error(JSON.stringify(body.errors));
 
-let days = body.data.user.contributionCalendar.weeks
+let days = body.data.user.contributionsCollection.contributionCalendar.weeks
   .flatMap((w) => w.contributionDays)
   .sort((a, b) => a.date.localeCompare(b.date));
 
