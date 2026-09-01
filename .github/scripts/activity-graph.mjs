@@ -6,8 +6,8 @@ const username = process.env.GITHUB_USERNAME || "stutijha";
 if (!token) throw new Error("GITHUB_TOKEN is required");
 
 const to = new Date();
-// Stuti's contribution history starts on 2025-08-07.
-const from = new Date("2025-08-07T00:00:00Z");
+// Show only the current contribution period requested by Stuti.
+const from = new Date("2026-08-01T00:00:00Z");
 const iso = (d) => d.toISOString();
 
 const query = `
@@ -39,7 +39,7 @@ let days = body.data.user.contributionCalendar.weeks
   .sort((a, b) => a.date.localeCompare(b.date));
 
 const today = new Date().toISOString().slice(0, 10);
-days = days.filter((d) => d.date >= "2025-08-07" && d.date <= today);
+days = days.filter((d) => d.date >= "2026-08-01" && d.date <= today);
 if (!days.length) throw new Error("No contribution data found");
 
 const width = 1000, height = 390;
@@ -59,7 +59,7 @@ const gridY = ticks.map((v) => `
   <text x="${left - 10}" y="${y(v) + 4}" text-anchor="end" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">${v}</text>
 `).join("");
 
-const labelEvery = Math.max(1, Math.floor(days.length / 10));
+const labelEvery = Math.max(1, Math.floor(days.length / 6));
 const gridX = days.map((d, i) => {
   if (i !== 0 && i !== days.length - 1 && i % labelEvery !== 0) return "";
   const label = d.date.slice(5);
@@ -83,10 +83,10 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <polygon points="${area}" fill="#2f81f7" opacity="0.10"/>
   <polyline points="${line}" fill="none" stroke="#2f81f7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
   ${dots}
-  <text x="${width / 2}" y="${height - 5}" text-anchor="middle" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">2025-08-07 → ${today}</text>
+  <text x="${width / 2}" y="${height - 5}" text-anchor="middle" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">2026-08-01 → ${today}</text>
 </svg>
 `;
 
 fs.mkdirSync("assets", { recursive: true });
 fs.writeFileSync("assets/activity-graph.svg", svg);
-console.log(`Generated graph from 2025-08-07 to ${today} (${days.length} days).`);
+console.log(`Generated graph from 2026-08-01 to ${today} (${days.length} days).`);
