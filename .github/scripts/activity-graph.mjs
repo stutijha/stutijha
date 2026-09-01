@@ -6,7 +6,8 @@ const username = process.env.GITHUB_USERNAME || "stutijha";
 if (!token) throw new Error("GITHUB_TOKEN is required");
 
 const to = new Date();
-const from = new Date(to.getTime() - 365 * 24 * 60 * 60 * 1000);
+// Stuti's contribution history starts on 2025-08-07.
+const from = new Date("2025-08-07T00:00:00Z");
 const iso = (d) => d.toISOString();
 
 const query = `
@@ -37,13 +38,8 @@ let days = body.data.user.contributionCalendar.weeks
   .flatMap((w) => w.contributionDays)
   .sort((a, b) => a.date.localeCompare(b.date));
 
-// Start the graph on the first day with an actual contribution.
-const firstContribution = days.findIndex((d) => d.contributionCount > 0);
-if (firstContribution >= 0) days = days.slice(firstContribution);
-
-// Never show future days.
 const today = new Date().toISOString().slice(0, 10);
-days = days.filter((d) => d.date <= today);
+days = days.filter((d) => d.date >= "2025-08-07" && d.date <= today);
 if (!days.length) throw new Error("No contribution data found");
 
 const width = 1000, height = 390;
@@ -77,7 +73,6 @@ const dots = days.map((d, i) => `
   <circle cx="${x(i)}" cy="${y(d.contributionCount)}" r="4.2" fill="#ff7a00"/>
 `).join("");
 
-const firstDate = days[0].date;
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <rect width="100%" height="100%" fill="#0d1117"/>
@@ -88,10 +83,10 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <polygon points="${area}" fill="#2f81f7" opacity="0.10"/>
   <polyline points="${line}" fill="none" stroke="#2f81f7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
   ${dots}
-  <text x="${width / 2}" y="${height - 5}" text-anchor="middle" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">${firstDate} → ${today}</text>
+  <text x="${width / 2}" y="${height - 5}" text-anchor="middle" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">2025-08-07 → ${today}</text>
 </svg>
 `;
 
 fs.mkdirSync("assets", { recursive: true });
 fs.writeFileSync("assets/activity-graph.svg", svg);
-console.log(`Generated graph from ${firstDate} to ${today} (${days.length} days).`);
+console.log(`Generated graph from 2025-08-07 to ${today} (${days.length} days).`);
