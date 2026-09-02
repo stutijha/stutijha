@@ -61,8 +61,8 @@ const area = `${left},${top + plotH} ${line} ${x(days.length - 1)},${top + plotH
 const ticks = Array.from({ length: max / 5 + 1 }, (_, i) => i * 5);
 
 const gridY = ticks.map((v) => `
-  <line x1="${left}" y1="${y(v)}" x2="${width - right}" y2="${y(v)}" stroke="#183b66" stroke-width="1" stroke-dasharray="2 5"/>
-  <text x="${left - 10}" y="${y(v) + 4}" text-anchor="end" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">${v}</text>
+  <line x1="${left}" y1="${y(v)}" x2="${width - right}" y2="${y(v)}" stroke="#67365f" stroke-width="1" stroke-dasharray="2 5" opacity="0.9"/>
+  <text x="${left - 10}" y="${y(v) + 4}" text-anchor="end" fill="#b65ca7" font-size="12" font-family="Arial, sans-serif">${v}</text>
 `).join("");
 
 const labelEvery = Math.max(1, Math.floor(days.length / 6));
@@ -70,26 +70,38 @@ const gridX = days.map((d, i) => {
   if (i !== 0 && i !== days.length - 1 && i % labelEvery !== 0) return "";
   const label = d.date.slice(5);
   return `
-  <line x1="${x(i)}" y1="${top}" x2="${x(i)}" y2="${top + plotH}" stroke="#183b66" stroke-width="1" stroke-dasharray="2 5"/>
-  <text x="${x(i)}" y="${height - 25}" text-anchor="middle" fill="#2f81f7" font-size="11" font-family="Arial, sans-serif">${label}</text>
+  <line x1="${x(i)}" y1="${top}" x2="${x(i)}" y2="${top + plotH}" stroke="#67365f" stroke-width="1" stroke-dasharray="2 5" opacity="0.9"/>
+  <text x="${x(i)}" y="${height - 25}" text-anchor="middle" fill="#b65ca7" font-size="11" font-family="Arial, sans-serif">${label}</text>
 `;
 }).join("");
 
 const dots = days.map((d, i) => `
-  <circle cx="${x(i)}" cy="${y(d.contributionCount)}" r="4.2" fill="#ff7a00"/>
+  <circle cx="${x(i)}" cy="${y(d.contributionCount)}" r="5" fill="#ffffff" filter="url(#whiteGlow)"/>
+  <circle cx="${x(i)}" cy="${y(d.contributionCount)}" r="3.2" fill="#ffffff"/>
 `).join("");
 
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  <defs>
+    <filter id="pinkGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="whiteGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
   <rect width="100%" height="100%" fill="#0d1117"/>
-  <text x="${width / 2}" y="27" text-anchor="middle" fill="#2f81f7" font-size="18" font-weight="700" font-family="Arial, sans-serif">Stuti's Contribution Graph</text>
-  <text x="18" y="${top + plotH / 2}" transform="rotate(-90 18 ${top + plotH / 2})" text-anchor="middle" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">Contributions</text>
+  <text x="${width / 2}" y="27" text-anchor="middle" fill="#b65ca7" font-size="18" font-weight="700" font-family="Arial, sans-serif">Stuti's Contribution Graph</text>
+  <text x="18" y="${top + plotH / 2}" transform="rotate(-90 18 ${top + plotH / 2})" text-anchor="middle" fill="#b65ca7" font-size="12" font-family="Arial, sans-serif">Contributions</text>
   ${gridY}
   ${gridX}
-  <polygon points="${area}" fill="#2f81f7" opacity="0.10"/>
-  <polyline points="${line}" fill="none" stroke="#2f81f7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="${area}" fill="#ff4fa3" opacity="0.10"/>
+  <polyline points="${line}" fill="none" stroke="#ff4fa3" stroke-width="7" opacity="0.35" filter="url(#pinkGlow)" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="${line}" fill="none" stroke="#ff4fa3" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
   ${dots}
-  <text x="${width / 2}" y="${height - 5}" text-anchor="middle" fill="#2f81f7" font-size="12" font-family="Arial, sans-serif">2026-08-01 → ${today}</text>
+  <text x="${width / 2}" y="${height - 5}" text-anchor="middle" fill="#b65ca7" font-size="12" font-family="Arial, sans-serif">2026-08-01 → ${today}</text>
 </svg>
 `;
 
